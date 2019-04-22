@@ -1,0 +1,45 @@
+extends ../layout
+
+block content
+    nav.navbar.navbar-default.NOnavbar-fixed-top
+        .container-fluid
+            .navbar-header             
+                a.NOnavbar-brand(href='#')
+                    img#logo(src='../images/logo_text.png' alt='Talk Fusion')
+            
+
+    #wrapper
+        #sidebar-wrapper
+            ul.sidebar-nav
+                li.sidebar-brand
+                    a(href='/home')
+                        | 음을 그리다
+                li
+                    a(href='#') 그려진 악보
+                li
+                    a(href='users/show') PROFILE
+                li
+                    a(href='#') FAQ
+      
+        #page-content-wrapper
+            .container-fluid
+                .row
+                    #profile.col-lg-12
+                        .media
+                            img.align-self-center.mr-3(src='../images/user.png' alt='user-image')
+                            .media-body
+                                .row
+                                    .col-4.title
+                                        h4 이름
+                                    .col-8
+                                        h4 이하영
+                                .row
+                                    .col-4.title
+                                        h4 연락처
+                                    .col-8
+                                        h4 010-5729-0916
+                                .row
+                                    .col-4.title
+                                        h4 이메일
+                                    .col-8
+                                        h4 lhaayyy@naver.com                                        

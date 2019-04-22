@@ -1,32 +1,38 @@
 extends layout
 
 block content
-  #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-    ol.carousel-indicators
-      li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
-      li(data-target='#carouselExampleIndicators' data-slide-to='1')
-      li(data-target='#carouselExampleIndicators' data-slide-to='2')
+  #carouselExampleSlidesOnly.carousel.slide(data-ride='carousel')
     .carousel-inner
       .carousel-item.active
         img.d-block.w-100(src='images/web_background1.png' alt='web_background1')
       .carousel-item
         img.d-block.w-100(src='images/web_background2.png' alt='web_background2')
-    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
-      span.carousel-control-prev-icon(aria-hidden='true')
-      span.sr-only Previous
-    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
-      span.carousel-control-next-icon(aria-hidden='true')
-      span.sr-only Next
+
+
+
+
+
+
+  form(action='home')
+    #signinForm
+      .form-group.row
+        .input-group.mb-3
+          .input-group-prepend
+            span#basic-addon1.input-group-text 
+              i.fas.fa-user-circle
+            input#inputEmail.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1')
+
+      .form-group.row
+        .input-group.mb-3
+          .input-group-prepend
+            span#basic-addon1.input-group-text
+              i.fas.fa-key
+            input#inputPassword.form-control(type='password' placeholder='Password' aria-label='Password' aria-describedby='basic-addon1')
+
+      .form-group.row
+        .col-sm-10
+          button#signin.btn(type='submit') Sign in
   
-  form
-    .form-group.row
-      label.col-sm-2.col-form-label(for='inputEmail3') Email
-      .col-sm-10
-        input#inputEmail3.form-control(type='email' placeholder='Email')
-    .form-group.row
-      label.col-sm-2.col-form-label(for='inputPassword3') Password
-      .col-sm-10
-        input#inputPassword3.form-control(type='password' placeholder='Password')
-    .form-group.row
-      .col-sm-10
-        button.btn.btn-primary(href='/home' type='submit') Sign in
+      .form-group.row
+        .col-sm-10
+          button#signup.btn(href='users/new') Sign up
