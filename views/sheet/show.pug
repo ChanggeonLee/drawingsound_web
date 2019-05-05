@@ -22,24 +22,24 @@ block content
                     a(href='#') FAQ
       
         #page-content-wrapper
-            .container-fluid
-                .row
-                    #profile.col-lg-12
-                        .media
-                            img.align-self-center.mr-3(src='../images/user.png' alt='user-image')
-                            .media-body
-                                .row
-                                    .col-4.title
-                                        h4 이름
-                                    .col-8
-                                        h4 이하영
-                                .row
-                                    .col-4.title
-                                        h4 연락처
-                                    .col-8
-                                        h4 010-5729-0916
-                                .row
-                                    .col-4.title
-                                        h4 이메일
-                                    .col-8
-                                        h4 lhaayyy@naver.com                                        
+            div#printarea
+                .container-fluid
+                    .sheet-detail
+                        .row
+                            .col-12
+                                h2.title 제목
+                        .row   
+                            .col-8
+                            .col-4
+                                h4 작곡가
+                        .row
+                            .col-8
+                            .col-4  
+                                h4 날짜
+                        .row   
+                            .col-12
+                                img(src='../images/sheet.png' alt='sheet')
+            a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
+                img(src='../images/printer.png')                    
+
+                                                                

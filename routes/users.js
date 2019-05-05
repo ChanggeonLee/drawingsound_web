@@ -7,12 +7,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/new', function(req, res, next) {
-  res.redirect('users/new');
-});
-
 router.get('/show', function(req, res, next) {
-  res.redirect('users/show');
+  res.render('users/show');
 });
 
 router.post('/', function(req, res, next) {

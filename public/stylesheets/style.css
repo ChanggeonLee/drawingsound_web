@@ -196,6 +196,11 @@ a {
   color: rgb(0, 165, 137);
 }
 
+#sheet-detail .title {
+  margin: 0 auto;
+}
+
+
 /*profile style*/
 #profile {
   margin: 100px 50px;
