@@ -15,11 +15,11 @@ block content
                     a(href='/home')
                         | 음을 그리다
                 li
-                    a(href='#') 그려진 악보
+                    a(href='/home') 그려진 악보
                 li
-                    a(href='users/show') PROFILE
+                    a(href='/users/show') PROFILE
                 li
-                    a(href='#') FAQ
+                    a(href='/faq') FAQ
       
         #page-content-wrapper
             div#printarea
@@ -40,6 +40,4 @@ block content
                             .col-12
                                 img(src='../images/sheet.png' alt='sheet')
             a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
-                img(src='../images/printer.png')                    
-
-                                                                
+                img(src='../images/printer.png')

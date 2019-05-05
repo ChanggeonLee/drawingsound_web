@@ -3,7 +3,7 @@ extends layout
 block content
     nav.navbar.navbar-default.NOnavbar-fixed-top
         .container-fluid
-            .navbar-header             
+            .navbar-header 
                 a.NOnavbar-brand(href='#')
                     img#logo(src='images/logo_text.png' alt='Talk Fusion')
             
@@ -12,14 +12,14 @@ block content
         #sidebar-wrapper
             ul.sidebar-nav
                 li.sidebar-brand
-                    a(href='#')
+                    a(href='/home')
                         | 음을 그리다
                 li
-                    a(href='#') 그려진 악보
+                    a(href='/home') 그려진 악보
                 li
-                    a(href='users/show') PROFILE
+                    a(href='/users/show') PROFILE
                 li
-                    a(href='#') FAQ
+                    a(href='/faq') FAQ
       
         #page-content-wrapper
             .container-fluid
@@ -27,7 +27,7 @@ block content
                     .input-group-prepend
                         select#search3.selectpicker
                             option(selected='1') 제목
-                            option(value='2') 작곡가                   
+                            option(value='2') 작곡가
                             option(value='3') 날짜
                         input.form-control(type='text' aria-label='Text input with dropdown button')
                         .input-group-append
@@ -65,7 +65,7 @@ block content
                                     | 에일리
                                 p.card-day
                                     | 2019-04-22
-                                a.btn(href='#') VIEW                                
+                                a.btn(href='#') VIEW
 
                         
                         //a.btn.btn-default.menu-toggle(href='#menu-toggle') Toggle Menu

@@ -3,7 +3,7 @@ extends ../layout
 block content
     nav.navbar.navbar-default.NOnavbar-fixed-top
         .container-fluid
-            .navbar-header             
+            .navbar-header
                 a.NOnavbar-brand(href='#')
                     img#logo(src='../images/logo_text.png' alt='Talk Fusion')
             
@@ -15,11 +15,11 @@ block content
                     a(href='/home')
                         | 음을 그리다
                 li
-                    a(href='#') 그려진 악보
+                    a(href='/home') 그려진 악보
                 li
-                    a(href='users/show') PROFILE
+                    a(href='/users/show') PROFILE
                 li
-                    a(href='#') FAQ
+                    a(href='/faq') FAQ
       
         #page-content-wrapper
             .container-fluid
@@ -42,4 +42,4 @@ block content
                                     .col-4.title
                                         h4 이메일
                                     .col-8
-                                        h4 lhaayyy@naver.com                                        
+                                        h4 lhaayyy@naver.com
