@@ -22,6 +22,8 @@ block content
                     a(href='/faq') FAQ
       
         #page-content-wrapper
+            a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
+                img#printBtn(src='../images/printer.png')
             div#printarea
                 .container-fluid
                     .sheet-detail
@@ -39,5 +41,3 @@ block content
                         .row   
                             .col-12
                                 img(src='../images/sheet.png' alt='sheet')
-            a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
-                img(src='../images/printer.png')
