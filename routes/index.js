@@ -11,18 +11,22 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/signin', async(req, res, next) => {
-  req.flash('success', '로그인 성공~!');    
-  // req.flash('success', 'This is a flash message using the express-flash module.');
+  email = req.body.email;
+  password = req.body.password;
 
-  // a = await firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {  
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;  
-  // });
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function(firebaseUser){      
+      req.user=firebaseUser;
+      req.flash('success', "login 성공");    
+      res.redirect('/home');
+    })
+    .catch(function(error) {  
+      var errorCode = error.code;
+      var errorMessage = error.message;  
+      req.flash('danger', errorMessage);    
+      res.redirect('/');
+  });
 
-  // console.log(a);
-
-  // console.log(req.body);    
-  res.redirect('/home');
 });
 
 router.get('/list', function(req, res, next){
