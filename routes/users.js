@@ -3,7 +3,7 @@ var router = express.Router();
 var firebase = require('firebase');
 var needauth = require('./lib/need-auth');
 var asyncerror = require('./lib/async-error');
-//const catchErrors = require('../lib/async-error');
+// const catchErrors = require('../lib/async-error');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,7 +11,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/show',needauth ,asyncerror( async(req, res, next) => {
-  res.render('users/show');
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+
+  return firebase.database().ref('/users/'+uid).once('value').then(function(snapshot) {
+    console.log(uid);
+    var username = snapshot.val();    
+    console.log(username);
+    res.render('users/show',{User:username});  
+  });
 }));
   
 router.post('/', function(req, res, next) {
