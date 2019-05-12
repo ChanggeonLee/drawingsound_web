@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var firebase = require('firebase');
+var needauth = require('./lib/need-auth');
+var asyncerror = require('./lib/async-error');
 //const catchErrors = require('../lib/async-error');
 
 /* GET users listing. */
@@ -7,10 +10,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/show', function(req, res, next) {
+router.get('/show',needauth ,asyncerror( async(req, res, next) => {
   res.render('users/show');
-});
-
+}));
+  
 router.post('/', function(req, res, next) {
 /*
   var err = validateForm(req.body, {needPassword: true});

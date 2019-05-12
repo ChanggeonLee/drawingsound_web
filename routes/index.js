@@ -5,7 +5,6 @@ const config = require('./lib/firebase_config');
 
 firebase.initializeApp(config);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index');
 });
@@ -29,6 +28,7 @@ router.post('/signin', async(req, res, next) => {
 
 });
 
+// test
 router.get('/list', function(req, res, next){
   // var database = firebase.database();    
   return firebase.database().ref('/sheets').once('value').then(function(snapshot) {
@@ -36,7 +36,5 @@ router.get('/list', function(req, res, next){
     res.send(username);
   });
 });
-
-
 
 module.exports = router;
