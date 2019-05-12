@@ -34,40 +34,17 @@ block content
                         input.form-control(type='text' aria-label='Text input with dropdown button')
                         .input-group-append
                             button.btn.btn-secondary(type='button') SEARCH
+                .row    
+                    each sheet in Sheets                    
+                        .col-lg-4
+                            #sheet.card
+                                img.card-img-top(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/sheet.PNG?alt=media&token=f0fbfc88-f562-44bd-a5c9-abf5c66e8bdb' alt='...')
+                                .card-body
+                                    h4.card-title #{sheet.title}
+                                    p.card-text
+                                        | #{sheet.composer}
+                                    p.card-day
+                                        | 2019-04-22
+                                    a.btn(href='sheet/show?key='+sheet.key) VIEW
 
-                .row
-                    .col-lg-4
-                        #sheet.card
-                            img.card-img-top(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/sheet.PNG?alt=media&token=f0fbfc88-f562-44bd-a5c9-abf5c66e8bdb' alt='...')
-                            .card-body
-                                h4.card-title #{Sheets.title}
-                                p.card-text
-                                    | #{Sheets.composer}
-                                p.card-day
-                                    | 2019-04-22
-                                a.btn(href='sheet/show') VIEW
-
-                    .col-lg-4
-                        #sheet.card
-                            img.card-img-top(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/sheet.PNG?alt=media&token=f0fbfc88-f562-44bd-a5c9-abf5c66e8bdb' alt='...')
-                            .card-body
-                                h4.card-title If you
-                                p.card-text
-                                    | 에일리
-                                p.card-day
-                                    | 2019-04-22
-                                a.btn(href='#') VIEW
-
-                    .col-lg-4
-                        #sheet.card
-                            img.card-img-top(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/sheet.PNG?alt=media&token=f0fbfc88-f562-44bd-a5c9-abf5c66e8bdb' alt='...')
-                            .card-body
-                                h4.card-title If you
-                                p.card-text
-                                    | 에일리
-                                p.card-day
-                                    | 2019-04-22
-                                a.btn(href='#') VIEW
-
-                        
                         //a.btn.btn-default.menu-toggle(href='#menu-toggle') Toggle Menu

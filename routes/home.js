@@ -9,10 +9,14 @@ router.get('/', needauth, (req, res, next) => {
   var uid = user.uid;
 
   return firebase.database().ref('/sheets/'+uid).once('value').then(function(snapshot) {
-    console.log(uid);
-    var sheets = snapshot.val();    
-    console.log(sheets);
-    res.render('home',{Sheets:sheets});  
+    var returnArr = [];
+    snapshot.forEach(function(childSnapshot) {
+      var item = childSnapshot.val();
+      item.key = childSnapshot.key;
+      returnArr.push(item);
+    });
+    
+    res.render('home',{Sheets:returnArr});  
   });
 });
 
