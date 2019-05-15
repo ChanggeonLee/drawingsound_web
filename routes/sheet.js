@@ -18,4 +18,13 @@ router.get('/show', needauth, function(req, res, next) {
   });  
 });
 
+router.get('/test', function(req, res, next) {
+  var url = '/sheets/' + req.query.uid + '/' + req.query.key + '/';  
+  console.log(url);
+  return firebase.database().ref(url).once('value').then(function(snapshot) {
+    var sheet = (snapshot.val());
+    res.render('sheet/show', {Sheet:sheet});
+  });  
+});
+
 module.exports = router;
