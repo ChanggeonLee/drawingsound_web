@@ -30,6 +30,7 @@ router.get('/test', function(req, res, next) {
 router.get('/msheet',function(req,res,next) {
   console.log(req.query.uid);
   console.log(req.query.key);
+  var url = '/sheets/' + req.query.uid + '/' + req.query.key + '/'; 
   return firebase.database().ref(url).once('value').then(function(snapshot) {
     var sheet = (snapshot.val());
     res.render('sheet/mobile', {Sheet:sheet});
