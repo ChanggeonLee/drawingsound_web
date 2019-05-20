@@ -1,0 +1,8 @@
+extends ../layout
+
+block content 
+  div#sheetdata(style="display:none") #{Sheet.mobileSheet}    
+  #notation
+  script(type="text/javascript").
+      var sheet =$("#sheetdata").text();      
+      ABCJS.renderAbc('notation', sheet);
