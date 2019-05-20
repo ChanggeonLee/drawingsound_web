@@ -20,11 +20,20 @@ router.get('/show', needauth, function(req, res, next) {
 
 router.get('/test', function(req, res, next) {
   var url = '/sheets/' + req.query.uid + '/' + req.query.key + '/';  
-  console.log(url);
+  console.log(req.query.key);
   return firebase.database().ref(url).once('value').then(function(snapshot) {
     var sheet = (snapshot.val());
     res.render('sheet/show', {Sheet:sheet});
   });  
+});
+
+router.get('/msheet',function(req,res,next) {
+  console.log(req.query.uid);
+  console.log(req.query.key);
+  return firebase.database().ref(url).once('value').then(function(snapshot) {
+    var sheet = (snapshot.val());
+    res.render('sheet/mobile', {Sheet:sheet});
+  });
 });
 
 module.exports = router;

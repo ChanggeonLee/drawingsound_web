@@ -28,6 +28,18 @@ router.post('/signin', async(req, res, next) => {
 
 });
 
+router.get('/signout', async(req, res, next) => {
+
+  firebase.auth().signOut().then(function() {
+    req.flash('success', 'Successfully signed out');
+  }).catch(function(error) {
+    // An error happened.
+  });
+  
+  res.redirect('/');
+});
+
+
 // test
 router.get('/list', function(req, res, next){
   // var database = firebase.database();    
