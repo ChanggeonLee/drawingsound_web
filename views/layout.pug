@@ -31,6 +31,23 @@ html
         max-width: 400px;
       }
 
+      
+    script(type='text/javascript').
+      var win=null;
+      function print(printThis){
+      win = window.open();
+      self.focus();
+      win.document.open();
+      win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
+      win.document.write('body, td {font-family:Verdana; font-size: 10pt;}');
+      win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
+      win.document.write(printThis);
+      win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
+      win.document.close();
+      win.print();
+      win.close();
+      }
+
     //- 주석 필요
     //- link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
     //- link(rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
@@ -40,21 +57,6 @@ html
     //- script(src='https://use.fontawesome.com/5d171e4ff2.js')
     //- script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
 
-    //- script(type='text/javascript').
-    //-   var win=null;
-    //-   function print(printThis){
-    //-   win = window.open();
-    //-   self.focus();
-    //-   win.document.open();
-    //-   win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
-    //-   win.document.write('body, td {font-family:Verdana; font-size: 10pt;}');
-    //-   win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
-    //-   win.document.write(printThis);
-    //-   win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
-    //-   win.document.close();
-    //-   win.print();
-    //-   win.close();
-    //-   }
     //- script(type='text/javascript').
     //-   $('.panel-collapse').on('show.bs.collapse', function () {
     //-     $(this).siblings('.panel-heading').addClass('active');
