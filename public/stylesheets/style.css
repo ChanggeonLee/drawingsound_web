@@ -258,3 +258,55 @@ a {
 	-moz-transform: rotate(180deg);
 	transform: rotate(180deg);
 } 
+
+
+
+
+
+/* new design */
+
+/* topnav.pug */
+
+nav.navbar.navbar-expand-md.navbar-light.bg-light {
+  background-color: white!important;
+  padding: 0 0 0 5px;
+  border-bottom: 1px solid #D4D4D4;
+}
+
+
+
+.navbar-light .navbar-brand {
+  color:#F6682F;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 20px;
+  padding-right: 20px;
+  border-right: 1px solid #EFF2F5;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: #F6682F;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #45494E;
+  font-size: 14px;
+  border-left: 1px solid #EFF2F5;
+  padding: 20px 20px;
+}
+
+a.nav-link:hover {
+  color: #45494E;
+  background: #EFF2F5;
+}
+
+button.navbar-toggler {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 15px 20px;
+}
+
+button.navbar-toggler:hover {
+  background: #EFF2F5;
+}

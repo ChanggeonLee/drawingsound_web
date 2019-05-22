@@ -1,0 +1,19 @@
+.header.clearfix
+    nav.navbar.navbar-expand-md.navbar-light.bg-light
+        a.navbar-brand(href='/home') 음을 그리다
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        |         
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.ml-auto.pull-right
+                li#nitem1.nav-item
+                    a.nav-link(href='/events') MUSIC SHEETS
+                
+                li#nitem2.nav-item
+                    a.nav-link(href=`/users/show`) MY PROFILE                       
+
+                li#nitem3.nav-item
+                    a.nav-link(href='/faq') FAQ
+
+                li#nitem4.nav-item                    
+                    a.nav-link(href='/signout') SIGN OUT                            
