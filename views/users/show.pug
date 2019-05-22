@@ -2,32 +2,21 @@ extends ../layout
 
 block content
     include ../includes/topnav
-
-    nav.navbar.navbar-default.NOnavbar-fixed-top
-        .container-fluid
-            .navbar-header
-                a.NOnavbar-brand(href='#')
-                    img#logo(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/logo_text.png?alt=media&token=a6de0c11-be8f-45c5-ae63-95a675b3dacf' alt='Talk Fusion')
-            
-
-    #wrapper
-        #sidebar-wrapper
-            include ../includes/sidebar.pug
       
-        #page-content-wrapper
-            .container-fluid
-                .row
-                    #profile.col-lg-12
-                        .media
-                            img.align-self-center.mr-3(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/user.png?alt=media&token=6ba25139-9533-4956-b1bd-1cf9d94371c1' alt='user-image')
-                            .media-body
-                                .row
-                                    .col-4.title
-                                        h4 이름
-                                    .col-8
-                                        h4 #{User.username}                                
-                                .row
-                                    .col-4.title
-                                        h4 이메일
-                                    .col-8
-                                        h4 #{User.email}
+    #page-content-wrapper
+        .container-fluid
+            .row
+                #profile.col-lg-12
+                    .media
+                        img.align-self-center.mr-3(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/user.png?alt=media&token=6ba25139-9533-4956-b1bd-1cf9d94371c1' alt='user-image')
+                        .media-body
+                            .row
+                                .col-4.title
+                                    h4 이름
+                                .col-8
+                                    h4 #{User.username}                                
+                            .row
+                                .col-4.title
+                                    h4 이메일
+                                .col-8
+                                    h4 #{User.email}

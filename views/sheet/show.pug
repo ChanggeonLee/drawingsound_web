@@ -3,46 +3,36 @@ extends ../layout
 block content
     include ../includes/topnav
 
-    nav.navbar.navbar-default.NOnavbar-fixed-top
-        .container-fluid
-            .navbar-header             
-                a.NOnavbar-brand(href='#')
-                    img#logo(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/logo_text.png?alt=media&token=a6de0c11-be8f-45c5-ae63-95a675b3dacf' alt='Talk Fusion')
-            
-    #wrapper
-        #sidebar-wrapper
-            include ../includes/sidebar.pug
-      
-        #page-content-wrapper
-            a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
-                img#printBtn(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/printer.png?alt=media&token=e4254d76-4b1d-4a94-9e12-f8e9e28dcf21')
- 
-            div#printarea
-                .container-fluid
-                    .sheet-detail
-                        //- .row
-                        //-     .col-12
-                        //-         h2.title 제목
-                        //-         h2 #{Sheet.title}
-                        //- .row   
-                        //-     .col-8
-                        //-     .col-4
-                        //-         h4 작곡가
-                        //-         h4 #{Sheet.composer}
-                        //- .row
-                        //-     .col-8
-                        //-     .col-4  
-                        //-         h4 날짜
-                        .row   
-                            .col-12
-                                //- img(src=Sheet.url alt='sheet')
-                                div#sheetdata(style="display:none") #{Sheet.str}    
+    #page-content-wrapper
+        a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
+            img#printBtn(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/printer.png?alt=media&token=e4254d76-4b1d-4a94-9e12-f8e9e28dcf21')
 
-                                #notation
-                                script(type="text/javascript").
-                                    var sheet =$("#sheetdata").text();      
-                                    //- console.log(sheet);
-                                    ABCJS.renderAbc('notation', sheet,{ responsive: "resize"});
-                        .row
-                            .col-12                                                                    
-                                a.btn.btn-danger.btn-lg(href=`/sheet/delete/${Key}?_method=DELETE`) Delete
+        div#printarea
+            .container-fluid
+                .sheet-detail
+                    //- .row
+                    //-     .col-12
+                    //-         h2.title 제목
+                    //-         h2 #{Sheet.title}
+                    //- .row   
+                    //-     .col-8
+                    //-     .col-4
+                    //-         h4 작곡가
+                    //-         h4 #{Sheet.composer}
+                    //- .row
+                    //-     .col-8
+                    //-     .col-4  
+                    //-         h4 날짜
+                    .row   
+                        .col-12
+                            //- img(src=Sheet.url alt='sheet')
+                            div#sheetdata(style="display:none") #{Sheet.str}    
+
+                            #notation
+                            script(type="text/javascript").
+                                var sheet =$("#sheetdata").text();      
+                                //- console.log(sheet);
+                                ABCJS.renderAbc('notation', sheet,{ responsive: "resize"});
+                    .row
+                        .col-12                                                                    
+                            a.btn.btn-danger.btn-lg(href=`/sheet/delete/${Key}?_method=DELETE`) Delete
