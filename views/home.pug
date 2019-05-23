@@ -2,18 +2,26 @@ extends layout
 
 block content
     include ./includes/topnav
-    
-    #page-content-wrapper
-        .container-fluid
-            //- .input-group.mb-3
-            //-     .input-group-prepend
-            //-         select#search3.selectpicker
-            //-             option(selected='1') 제목
-            //-             option(value='2') 작곡가
-            //-             option(value='3') 날짜
-            //-         input.form-control(type='text' aria-label='Text input with dropdown button')
-            //-         .input-group-append
-            //-             button.btn.btn-secondary(type='button') SEARCH
+
+    #page-content-wrapper  
+        .main-box
+            #carousel.carousel.slide.carousel-fade(data-ride='carousel', data-interval='4000')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src="../images/img_background2.png", alt='First slide')
+                    .carousel-item
+                        img.d-block.w-100(src="../images/img_background1.png", alt='Second slide')                
+                   
+            .main-button-box
+                a#mbtn1.btn.btn-block(href='#sub-box') 그려진 악보
+                br
+                a#mbtn2.btn.btn-block(href='/users/show') 내 정보
+                br
+                a#mbtn3.btn.btn-block(href='/faq') 자주 묻는 질문
+                
+        #sub-box.container
+            #sub-text 
+                |MUSIC SHEETS
             .row    
                 each sheet in Sheets                    
                     .col-lg-4
