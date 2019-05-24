@@ -39,13 +39,12 @@ body {
   color: white;
   float: right;
   width: 100px;
-  background-color: rgb(248, 128, 144);
+  background-color: rgb(250, 149, 152);
   transition: 0.5s;
 }
 
 #signinForm #signin:hover {
-  background-color: rgb(221, 92, 109);
-  transition: 0.5s;
+  background-color: rgb(238, 134, 138);
 }
 
 
