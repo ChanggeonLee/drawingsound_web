@@ -20,7 +20,7 @@ block content
       win.close();
       }
 
-    #page-content-wrapper
+    #page-content-wrapper.sheetshow
         div#printarea
             .container-fluid
                 .sheet-detail
@@ -40,3 +40,6 @@ block content
                 a#print.btn.btn-block(onclick="javascript:print(document.getElementById('printarea').innerHTML)") PRINT MUSIC SHEET                                                               
             .col-4
                 a#delete.btn.btn-block(href=`/sheet/delete/${Key}?_method=DELETE`) DELETE
+
+
+    include ../includes/footer

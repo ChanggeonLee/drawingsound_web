@@ -214,13 +214,14 @@ button.navbar-toggler:hover {
 
 #sheet .btn:hover {
   color: white;
-  background-color: rgb(255, 149, 163);
+  background-color: rgb(231, 99, 116);
   transition: 0.5s;
 } 
 
 
 
 /* sheet/show.pug */
+
 #printarea {
   margin: 0 auto;
   padding-top: 30px;
@@ -231,6 +232,7 @@ button.navbar-toggler:hover {
 #sheetBtns{
   width: 85%;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 #print {
@@ -260,14 +262,14 @@ button.navbar-toggler:hover {
   color: white;
   margin-bottom: 10px;
   border-radius: 0px;
-  border: 2px solid rgb(255, 149, 163);
-  background-color: rgb(255, 149, 163);
+  border: 2px solid rgb(231, 99, 116);
+  background-color: rgb(231, 99, 116);
   transition: 0.5s;
 }
 
 #delete:hover {
-  border: 2px solid rgb(231, 99, 116);
-  background-color: rgb(231, 99, 116);
+  border: 2px solid rgb(214, 67, 87);
+  background-color: rgb(214, 67, 87);
   transition: 0.5s;
 }
 
@@ -297,6 +299,7 @@ button.navbar-toggler:hover {
 
 #profile {
   margin: 0px auto;
+  margin-bottom: 40px;
   padding: 60px 50px;
   width: 90%;
   border: 3px solid transparent;
@@ -312,7 +315,7 @@ button.navbar-toggler:hover {
 }
 
 #profile .media-body {
-  margin: auto 30px;
+  margin: auto 35px;
 }
 
 #profile .title h4 {
@@ -334,6 +337,7 @@ button.navbar-toggler:hover {
 
 #faq{
   margin: 0px auto;
+  margin-bottom: 150px;
   width: 92%;
 }
 
@@ -396,6 +400,44 @@ button.navbar-toggler:hover {
   font-style: italic;
 }
 
+
+/* footer.pug */
+
+.bottom-box {
+  font-weight: lighter;
+  margin-top: 200px;
+  background: rgb(190, 98, 107);
+  border-top: 7px solid rgb(236, 153, 161);
+  color: rgb(255, 228, 231);
+}
+
+.bottom {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 35px;
+}
+
+.bottom .info .title {
+  font-size: 15px;
+  font-style: italic;
+}
+
+.bottom .info .content {
+  font-size: 14px;
+}
+
+.bottom .sign {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 218, 218, 0.2);
+  padding: 25px 0 10px 0;
+}
+
+.bottom .sign .title {
+  font-size: 17px;
+  color: white;
+}
 
 
 /* responsive design */
