@@ -1,42 +1,53 @@
-
-/*index.pug*/
-#carouselExampleSlidesOnly img {
-  width: 100%;
-}
-
-#signinForm {
-  margin: 50px auto;
-  width: 300px;
-}
-
-
-#signinForm .input-group-text {
-  font: 20px;
-  color: white;
-  background-color: rgb(187, 164, 202);
-}
-
-#signinForm #signin {
-  color: white;
-  background-color: rgb(221, 165, 178);
-  float: right;
-  width: 100px;
-}
-
-#signinForm #signup {
-  color: white;
-  background-color: rgb(152, 155, 201);
-  float: right;
-  width: 100px;
-}
-
-
-/* new design */
-
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
 body { 
   font-family: 'helvetica', 'NanumGothic', '나눔고딕','NanumGothicWeb', '맑은 고딕', 'Malgun Gothic', Dotum; 
 }
+
+
+/* index.pug */
+#signinForm {
+  margin: 50px auto;
+  width: 100%;
+  max-width: 350px;
+}
+
+#signinForm .input-group {
+  display: block;
+}
+
+#signinForm .input-group-text {
+  font: 20px;
+  color: white;
+  background: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image-slice: 1;
+}
+
+#signinForm .form-control {
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image-slice: 1;
+  border-left: none;
+}
+
+#signinForm #signin {
+  color: white;
+  float: right;
+  width: 100px;
+  background-color: rgb(248, 128, 144);
+  transition: 0.5s;
+}
+
+#signinForm #signin:hover {
+  background-color: rgb(221, 92, 109);
+  transition: 0.5s;
+}
+
 
 /* topnav.pug */
 
@@ -213,8 +224,8 @@ button.navbar-toggler:hover {
 }
 
 #sheet .btn:hover {
-  color: white;
-  background-color: rgb(231, 99, 116);
+  color: rgb(180, 74, 74);
+  background-color: rgb(255, 240, 244);
   transition: 0.5s;
 } 
 
@@ -239,7 +250,7 @@ button.navbar-toggler:hover {
   cursor: pointer;
   width: 100%;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   color: rgb(180, 74, 74);
   margin-bottom: 10px;
   border: 2px solid transparent;
@@ -258,7 +269,7 @@ button.navbar-toggler:hover {
 #delete {
   width: 100%;
   text-align: center;
-  font-size: 13px;
+  font-size: 14px;
   color: white;
   margin-bottom: 10px;
   border-radius: 0px;
@@ -350,17 +361,13 @@ button.navbar-toggler:hover {
 }
 
 .panel-heading {
+  background: linear-gradient(to bottom right, rgba(255, 213, 213, 0.75) 0%, rgba(243, 228, 255, 0.75) 100%);
   padding-top: 5px;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
   -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
   border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
   border-image-slice: 1;
-  transition: 0.5s;
-}
-
-.panel-heading:hover {
-  background-color: rgb(255, 232, 238);
   transition: 0.5s;
 }
 
@@ -375,10 +382,10 @@ button.navbar-toggler:hover {
 }
 
 .panel-body {
-  background-color: rgb(255, 247, 248);
+  background-color: rgb(255, 255, 255);
   padding: 20px;
   font-size: 15px;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
   -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
   border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);

@@ -1,31 +1,31 @@
 extends layout
 
 block content
-  #carouselExampleSlidesOnly.carousel.slide(data-ride='carousel')
-    .carousel-inner
-      .carousel-item.active
-        img.d-block.w-100(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/web_background1.png?alt=media&token=4ea39bee-a22f-44fc-90cb-54967b572f53' alt='web_background1')
-      .carousel-item
-        img.d-block.w-100(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/web_background2.png?alt=media&token=024f4d4d-c4d9-4785-98da-bfa84e6544ef' alt='web_background2')
-
+  .main-box
+      #carousel.carousel.slide.carousel-fade(data-ride='carousel', data-interval='4000')
+          .carousel-inner
+              .carousel-item.active
+                  img.d-block.w-100(src="../images/index_background2.png", alt='First slide')
+              .carousel-item
+                  img.d-block.w-100(src="../images/index_background1.png", alt='Second slide')                
+      
 
   form(action='/signin' method="post")
     #signinForm
-      .form-group.row
-        .input-group.mb-3
+      .form-group
+        .input-group
           .input-group-prepend
             span#basic-addon1.input-group-text 
               i.fas.fa-user-circle
             input#inputEmail.form-control(name='email' type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1')
 
-      .form-group.row
-        .input-group.mb-3
+      .form-group
+        .input-group
           .input-group-prepend
             span#basic-addon1.input-group-text
               i.fas.fa-key
             input#inputPassword.form-control(name='password' type='password' placeholder='Password' aria-label='Password' aria-describedby='basic-addon1')
 
-      .form-group.row
-        .col-sm-10
+      .form-group
           button#signin.btn(type='submit') Sign in
   
