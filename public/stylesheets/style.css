@@ -30,43 +30,6 @@
   width: 100px;
 }
 
-/*faq style*/
-
-#faq{
-  padding:50px;
-  background:#fff;
-}
-
-.panel-heading {
-  padding: 0;
-	border:0;
-}
-.panel-title>a, .panel-title>a:active{
-	display:block;
-	padding:15px;
-  color:#555;
-  font-size:16px;
-  font-weight:bold;
-	text-transform:uppercase;
-	letter-spacing:1px;
-  word-spacing:3px;
-	text-decoration:none;
-}
-.panel-heading  a:before {
-   font-family: 'Glyphicons Halflings';
-   content: "\e114";
-   float: right;
-   transition: all 0.5s;
-}
-.panel-heading.active a:before {
-	-webkit-transform: rotate(180deg);
-	-moz-transform: rotate(180deg);
-	transform: rotate(180deg);
-} 
-
-
-
-
 
 /* new design */
 
@@ -121,11 +84,14 @@ button.navbar-toggler {
   border: 0;
   border-radius: 0;
   margin: 0;
+  height: 100%;
   padding: 15px 20px;
+  transition: 0.3s;
 }
 
 button.navbar-toggler:hover {
   background: rgb(255, 245, 245) !important;
+  transition: 0.3s;
 }
 
 #page-content-wrapper {
@@ -186,7 +152,7 @@ button.navbar-toggler:hover {
   margin-top: 40px;
 }
 
-#sub-text {
+#home-sub-text {
   color: rgb(214, 89, 89);
   font-size: 30px;
   font-style: italic;
@@ -203,7 +169,7 @@ button.navbar-toggler:hover {
   transition: 0.5s;
 }
 
-#sub-text:hover {
+#home-sub-text:hover {
   color: rgb(148, 56, 56);
   transition: 0.5s;
 }
@@ -223,13 +189,13 @@ button.navbar-toggler:hover {
   text-align: right;
   font-size: 17px;
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #sheet .card-day {
   text-align: right;
-  font-size: 15px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 25px;
 }
 
 #sheet .btn {
@@ -309,10 +275,10 @@ button.navbar-toggler:hover {
 
 /* users/show.pug */
 
-#profile-text {
+#sub-text {
   width: 90%;
   margin: 0px auto;
-  margin-top: 110px;
+  margin-top: 100px;
   margin-bottom: 20px;
   color: rgb(214, 89, 89);
   font-size: 30px;
@@ -324,7 +290,7 @@ button.navbar-toggler:hover {
   transition: 0.5s;
 }
 
-#profile-text:hover {
+#sub-text:hover {
   color: rgb(148, 56, 56);
   transition: 0.5s;
 }
@@ -363,6 +329,75 @@ button.navbar-toggler:hover {
 }
 
 
+
+/* faq.pug */
+
+#faq{
+  margin: 0px auto;
+  width: 92%;
+}
+
+#faq i {
+  float: right;
+}
+
+.panel {
+  margin-bottom: 20px;
+}
+
+.panel-heading {
+  padding-top: 5px;
+  border: 3px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image-slice: 1;
+  transition: 0.5s;
+}
+
+.panel-heading:hover {
+  background-color: rgb(255, 232, 238);
+  transition: 0.5s;
+}
+
+.panel-title>a, .panel-title>a:active {
+	display:block;
+	padding:15px;
+  color:#555;
+  font-size:15px;
+  font-weight:bold;
+	text-transform:uppercase;
+	text-decoration:none;
+}
+
+.panel-body {
+  background-color: rgb(255, 247, 248);
+  padding: 20px;
+  font-size: 15px;
+  border: 3px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image-slice: 1;
+  border-top: none;
+}
+
+.panel-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.panel-text-title {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
 /* responsive design */
 
 @media only screen and (max-width : 1000px) {
@@ -388,3 +423,5 @@ button.navbar-toggler:hover {
     margin-bottom: -10px;
   }
 }
+
+

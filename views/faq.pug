@@ -5,61 +5,60 @@ block content
 
     #page-content-wrapper
         .container-fluid
+            #sub-text 
+                |F A Q
+
             #faq
                 .wrapper.center-block
                     #accordion.panel-group(role='tablist' aria-multiselectable='true')
+
                     .panel.panel-default
                         #headingOne.panel-heading(role='tab')
                             h4.panel-title
                                 a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseOne' aria-expanded='false' aria-controls='collapseOne')
                                     | 사용법은 어떻게 되나요?
+                                    i.fas.fa-angle-down
                         #collapseOne.panel-collapse.collapse(role='tabpanel' aria-labelledby='headingOne')
                             .panel-body
-                                | 1. 안드로이드 애플리케이션 '음을그리다'를 다운로드 합니다. 
-                                br
-                                | 2. 허밍을 통해 악보를 생성한 뒤 저장합니다. 
-                                br
-                                | 3. 웹 로그인을 통해 저장된 악보를 크게 볼 수 있습니다. 
-                                br
-                                | 4. 저장된 악보를 프린트할 수 있습니다.
-                                br
+                                .panel-text 1. 안드로이드 애플리케이션 '음을그리다'를 다운로드 합니다. 
+                                .panel-text 2. 허밍을 통해 악보를 생성한 뒤 저장합니다. 
+                                .panel-text 3. 웹 로그인을 통해 저장된 악보를 크게 볼 수 있습니다. 
+                                .panel-text 4. 저장된 악보를 프린트할 수 있습니다.
+
                     .panel.panel-default
                         #headingTwo.panel-heading(role='tab')
                             h4.panel-title
                                 a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
                                     | 저장한 악보는 어떻게 보나요?
+                                    i.fas.fa-angle-down
                         #collapseTwo.panel-collapse.collapse(role='tabpanel' aria-labelledby='headingTwo')
                             .panel-body
-                                | 좌측의 '그려진 악보' 메뉴를 통해 저장된 악보 리스트를 볼 수 있습니다. 
-                                br
-                                | VIEW 를 눌러 자세히 볼 수 있습니다. 
-                                br 
-                                | VIEW 페이지에서 프린트 아이콘을 클릭하면 컴퓨터에 악보 정보를 pdf로 저장할 수 있습니다.
+                                .panel-text MUSIC SHEET 메뉴를 통해 저장된 악보 리스트를 볼 수 있습니다. 
+                                .panel-text VIEW 를 눌러 자세히 볼 수 있습니다. 
+                                .panel-text VIEW 페이지에서 PRINT MUSIC SHEET 버튼을 클릭하면 컴퓨터에 악보 정보를 pdf로 저장할 수 있습니다.
+
                     .panel.panel-default
                         #headingThree.panel-heading(role='tab')
                             h4.panel-title
                                 a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
                                     | 출력은 어떻게 할 수 있나요?
+                                    i.fas.fa-angle-down
                         #collapseThree.panel-collapse.collapse(role='tabpanel' aria-labelledby='headingThree')
                             .panel-body
-                                | 악보 VIEW 페이지에서 출력 아이콘을 클릭하면 출력을 위한 페이지가 나옵니다. 
-                                br
-                                | 출력 페이지에서 출력 용지, 크기 설정 후 출력 가능합니다.
+                                .panel-text 악보 VIEW 페이지에서 PRINT MUSIC SHEET 버튼을 클릭하면 출력을 위한 페이지가 나옵니다. 
+                                .panel-text 출력 페이지에서 출력 용지, 크기 설정 후 출력 가능합니다.
+
                     .panel.panel-default
                         #headingFour.panel-heading(role='tab')
                             h4.panel-title
                                 a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href='#collapseFour' aria-expanded='false' aria-controls='collapseFour')
                                     | 문의는 어디로 하나요?
+                                    i.fas.fa-angle-down
                         #collapseFour.panel-collapse.collapse(role='tabpanel' aria-labelledby='headingFour')
                             .panel-body
-                                | '음을 그리다' 개발팀 '7F'
-                                br
-                                | 이창건 
-                                br
-                                | 이재환
-                                br
-                                | 이하영 
-                                br
-                                | 정영서
-                                br
+                                .panel-text-title 음을 그리다 &emsp; 개발팀 7F
+                                .panel-text 이창건 &emsp;&emsp;&emsp; changgeon718@gmail.com
+                                .panel-text 이재환 &emsp;&emsp;&emsp; jaehwlee@gmail.com
+                                .panel-text 이하영 &emsp;&emsp;&emsp; qufgkdud@gmail.com
+                                .panel-text 정영서 &emsp;&emsp;&emsp; yeongseoj920@gmail.com
                         
