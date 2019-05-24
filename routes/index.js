@@ -16,7 +16,7 @@ router.post('/signin', async(req, res, next) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(firebaseUser){      
       req.user=firebaseUser;
-      req.flash('success', "login 성공");    
+      //req.flash('success', "login 성공");    
       res.redirect('/home');
     })
     .catch(function(error) {  

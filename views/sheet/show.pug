@@ -3,26 +3,27 @@ extends ../layout
 block content
     include ../includes/topnav
 
-    #page-content-wrapper
-        a(onclick="javascript:print(document.getElementById('printarea').innerHTML)")
-            img#printBtn(src='https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/printer.png?alt=media&token=e4254d76-4b1d-4a94-9e12-f8e9e28dcf21')
+    //- set print area
+    script(type='text/javascript').
+      var win=null;
+      function print(printThis){
+      win = window.open();
+      self.focus();
+      win.document.open();
+      win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>');
+      win.document.write('body, td {font-family:Verdana; font-size: 10pt;}');
+      win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>');
+      win.document.write(printThis);
+      win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>');
+      win.document.close();
+      win.print();
+      win.close();
+      }
 
+    #page-content-wrapper
         div#printarea
             .container-fluid
                 .sheet-detail
-                    //- .row
-                    //-     .col-12
-                    //-         h2.title 제목
-                    //-         h2 #{Sheet.title}
-                    //- .row   
-                    //-     .col-8
-                    //-     .col-4
-                    //-         h4 작곡가
-                    //-         h4 #{Sheet.composer}
-                    //- .row
-                    //-     .col-8
-                    //-     .col-4  
-                    //-         h4 날짜
                     .row   
                         .col-12
                             //- img(src=Sheet.url alt='sheet')
@@ -33,6 +34,9 @@ block content
                                 var sheet =$("#sheetdata").text();      
                                 //- console.log(sheet);
                                 ABCJS.renderAbc('notation', sheet,{ responsive: "resize"});
-                    .row
-                        .col-12                                                                    
-                            a.btn.btn-danger.btn-lg(href=`/sheet/delete/${Key}?_method=DELETE`) Delete
+
+        .row#sheetBtns
+            .col-8
+                a#print.btn.btn-block(onclick="javascript:print(document.getElementById('printarea').innerHTML)") PRINT MUSIC SHEET                                                               
+            .col-4
+                a#delete.btn.btn-block(href=`/sheet/delete/${Key}?_method=DELETE`) DELETE

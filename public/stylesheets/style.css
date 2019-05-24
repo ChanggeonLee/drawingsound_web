@@ -31,16 +31,6 @@
 }
 
 
-
-/*sheet style*/
-
-
-#printBtn {
-  width: 50px;
-  height: 50px;
-}
-
-
 /*profile style*/
 #profile {
   margin: 100px 50px;
@@ -135,6 +125,7 @@ nav.navbar.navbar-expand-md.navbar-light.bg-light {
 .navbar-light .navbar-nav .nav-link {
   color: #45494E;
   font-size: 14px;
+  height: 60px;
   border-left: 1px solid rgb(253, 253, 253);
   padding: 20px 20px;
   background: rgb(255, 255, 255);
@@ -235,7 +226,7 @@ button.navbar-toggler:hover {
 }
 
 #sheet.card {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-bottom: 2px solid rgb(211, 203, 203);
 }
 
@@ -247,11 +238,14 @@ button.navbar-toggler:hover {
 
 #sheet .card-text {
   text-align: right;
+  font-size: 17px;
+  font-style: italic;
   margin-bottom: 10px;
 }
 
 #sheet .card-day {
   text-align: right;
+  font-size: 15px;
   margin-bottom: 20px;
 }
 
@@ -274,6 +268,60 @@ button.navbar-toggler:hover {
   transition: 0.5s;
 } 
 
+
+
+/* sheet/show.pug */
+#printarea {
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  width: 90%;
+}
+
+#sheetBtns{
+  width: 85%;
+  margin: 0 auto;
+}
+
+#print {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(180, 74, 74);
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  -webkit-border-image: -webkit-linear-gradient(top left, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image: linear-gradient(to bottom right, rgba(255, 114, 114, 0.75) 0%, rgba(180, 138, 214, 0.75) 100%);
+  border-image-slice: 1;
+}
+
+#print:hover {
+  background-color: rgb(255, 240, 244);
+  transition: 0.5s;
+}
+
+#delete {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 0px;
+  border: 2px solid rgb(255, 149, 163);
+  background-color: rgb(255, 149, 163);
+}
+
+#delete:hover {
+  border: 2px solid rgb(231, 99, 116);
+  background-color: rgb(231, 99, 116);
+  transition: 0.5s;
+}
+
+
+
+/* responsive design */
 
 @media only screen and (max-width : 1000px) {
   .main-button-box {
