@@ -432,6 +432,11 @@ button.navbar-toggler:hover {
   font-size: 14px;
 }
 
+.bottom .info a {
+  color: rgb(230, 176, 176) !important;
+  font-size: 14px;
+}
+
 .bottom .sign {
   margin-top: 30px;
   padding-bottom: 30px;
