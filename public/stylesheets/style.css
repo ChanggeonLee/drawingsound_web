@@ -6,7 +6,8 @@ body {
 
 /* index.pug */
 #signinForm {
-  margin: 50px auto;
+  margin: 0px auto;
+  margin-top: 50px;
   width: 100%;
   max-width: 350px;
 }
@@ -35,16 +36,33 @@ body {
   border-left: none;
 }
 
-#signinForm #signin {
+.button-group {
+  margin: 10px auto;
+  max-width: 350px;
+}
+
+.button-group #signin {
   color: white;
-  float: right;
   width: 100px;
+  margin-top: 5px;
   background-color: rgb(250, 149, 152);
   transition: 0.5s;
 }
 
-#signinForm #signin:hover {
+.button-group #signin:hover {
   background-color: rgb(238, 134, 138);
+}
+
+.button-group #signup {
+  color: white;
+  width: 100px;
+  margin-top: 5px;
+  background-color: rgb(174, 153, 190);
+  transition: 0.5s;
+}
+
+.button-group #signup:hover {
+  background-color: rgb(156, 135, 172);
 }
 
 
