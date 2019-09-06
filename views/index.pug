@@ -8,9 +8,12 @@ block content
                   img.d-block.w-100(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/index_background2.png?alt=media&token=54651b8b-346c-44aa-b510-5e37d77490bc", alt='First slide')
               .carousel-item
                   img.d-block.w-100(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/index_background1.png?alt=media&token=1f6a72b4-4420-480a-a86f-07dc206861e4", alt='Second slide')                
-      
-
+  
   form(action='/signin' method="post")
+    img#app-icon(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/app_icon.png?alt=media&token=e428aa13-168a-4a7a-b683-5fafee2fb248", alt='app icon')
+    p.app-text(align='center') 음을 그리다
+    P.app-text(align='center') Drawing Sound
+
     #signForm
       .form-group
         .input-group
@@ -31,3 +34,5 @@ block content
         button#signin.btn(type='submit') Sign in
       div(align="right")
         a#signup.btn(href='/users/signup') Sign up
+
+    include ./includes/footer

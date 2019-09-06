@@ -8,6 +8,10 @@ block content
                     img.d-block.w-100(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/signup_background.png?alt=media&token=776c36cc-0052-4465-93ad-f2ad7e1b7371", alt='First slide')    
 
     form(action='#' method="post")
+        img#app-icon(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/app_icon.png?alt=media&token=e428aa13-168a-4a7a-b683-5fafee2fb248", alt='app icon')
+        p.app-text(align='center') 음을 그리다
+        P.app-text(align='center') Drawing Sound
+
         #signForm
             .form-group
                 .label 사용자 이름
@@ -44,3 +48,5 @@ block content
         .button-group
             div(align="right")
                 button#signup.btn Sign up
+
+    include ../includes/footer
