@@ -13,19 +13,13 @@ router.post('/signin', async(req, res, next) => {
   email = req.body.email;
   password = req.body.password;
 
-  console.log("signin시도");
-
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(firebaseUser){      
-      console.log("signin시도성공");
-
       req.user=firebaseUser;
-      req.flash('success', "login 성공");    
+      //req.flash('success', "login 성공");    
       res.redirect('/home');
     })
     .catch(function(error) {  
-      console.log("signin실패");
-      
       var errorCode = error.code;
       var errorMessage = error.message;  
       req.flash('danger', errorMessage);    
