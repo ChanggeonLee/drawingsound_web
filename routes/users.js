@@ -21,6 +21,10 @@ router.get('/show',needauth ,asyncerror( async(req, res, next) => {
     res.render('users/show',{User:username});  
   });
 }));
+
+router.get('/signup', function(req, res, next) {
+  res.render('users/signup', { title: 'Express' });
+});
   
 router.post('/', function(req, res, next) {
 /*

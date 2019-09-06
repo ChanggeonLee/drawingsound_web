@@ -1,0 +1,46 @@
+extends ../layout
+
+block content
+    .main-box
+        #carousel.carousel.slide.carousel-fade(data-ride='carousel', data-interval='4000')
+            .carousel-inner
+                .carousel-item.active
+                    img.d-block.w-100(src="https://firebasestorage.googleapis.com/v0/b/drawingsound-1d381.appspot.com/o/signup_background.png?alt=media&token=776c36cc-0052-4465-93ad-f2ad7e1b7371", alt='First slide')    
+
+    form(action='#' method="post")
+        #signForm
+            .form-group
+                .label 사용자 이름
+                .input-group
+                    .input-group-prepend
+                        span#basic-addon1.input-group-text 
+                            i.fas.fa-user-circle
+                        input#inputEmail.form-control(name='email' type='text' placeholder='User Name' aria-label='Username' aria-describedby='basic-addon1')
+
+            .form-group
+                .label 이메일
+                .input-group
+                    .input-group-prepend
+                        span#basic-addon1.input-group-text 
+                            i.fas.fa-user-circle
+                        input#inputEmail.form-control(name='email' type='text' placeholder='Email Address' aria-label='Username' aria-describedby='basic-addon1')
+
+            .form-group
+                .label 패스워드 (8자 이상)
+                .input-group
+                    .input-group-prepend
+                        span#basic-addon1.input-group-text
+                            i.fas.fa-key
+                        input#inputPassword.form-control(name='password' type='password' placeholder='Password' aria-label='Password' aria-describedby='basic-addon1')
+
+            .form-group
+                .label 패스워드 확인
+                .input-group
+                    .input-group-prepend
+                        span#basic-addon1.input-group-text
+                            i.fas.fa-key
+                        input#inputPassword.form-control(name='password' type='password' placeholder='Password Confirm' aria-label='Password' aria-describedby='basic-addon1')
+
+        .button-group
+            div(align="right")
+                button#signup.btn Sign up
