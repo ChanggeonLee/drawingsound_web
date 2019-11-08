@@ -7,6 +7,8 @@ var methodOverride = require('method-override');
 var session = require('express-session');
 var flash = require('connect-flash');
 var favicon = require('serve-favicon');
+var bodyParser = require('body-parser')
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -20,6 +22,10 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+
+
+app.use(bodyParser.raw({ type: 'audio/wav', limit: '50mb' }));
 
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
