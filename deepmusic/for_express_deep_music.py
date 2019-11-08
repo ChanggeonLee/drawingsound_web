@@ -111,7 +111,7 @@ def load_data(data_path):
 
 def get_music_name(y):
     predict = []
-    label = ['GIVE_LOVE_AKMU', 'Palette_IU', '여수_밤바다_버스커버스커', '스물셋_IU', '밤편지_IU', '방에_모기가_있어_10cm', 'Natural_ImagineDragons', '삐삐_IU', 'the_one_samkim', '200%_AKMU', '오늘_오왠']
+    label = ['GIVE_LOVE_AKMU', 'Palette_IU', '소녀_오혁', '여수_밤바다_버스커버스커', '스물셋_IU', '밤편지_IU', '방에_모기가_있어_10cm', '상어가족_핑크퐁', '삐삐_IU', '200%_AKMU']
     for y_index in y:
         predict.append(label[np.argmax(y_index)])
     
