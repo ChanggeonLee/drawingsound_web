@@ -132,26 +132,30 @@ def remove_file(fname, path):
 
 
 if __name__ == "__main__":
-    # args로 경로 입력
-    fname=sys.argv[1]
-    path=fname+"_png/"
-    os.mkdir(path)
-    
-    # 입력 받은 경로에 관한 이미지를 만들어서 저장
-    save_wav(fname, path)
-    
-    # 이미지를 array 받아오기
-    x = load_data(path)
-    
-    # model에게 입력을 준다.
-    model = load_model(path="./deepmusic/model/")
-    y = model.predict(x)
-    
-    # 예측값에서 가장 많이 나온거 찾는다.
-    music_name = get_music_name(y)
-    
-    # 폴더와 wav파일 지운다.
-    remove_file(fname, path)
-    
-    # 예측값을 return
-    print(music_name)
+    try :
+        # args로 경로 입력
+        fname=sys.argv[1]
+        path=fname+"_png/"
+        os.mkdir(path)
+        
+        # 입력 받은 경로에 관한 이미지를 만들어서 저장
+        save_wav(fname, path)
+        
+        # 이미지를 array 받아오기
+        x = load_data(path)
+        
+        # model에게 입력을 준다.
+        model = load_model(path="./deepmusic/model/")
+        y = model.predict(x)
+        
+        # 예측값에서 가장 많이 나온거 찾는다.
+        music_name = get_music_name(y)
+        
+        # 폴더와 wav파일 지운다.
+        remove_file(fname, path)
+        
+        # 예측값을 return
+        print(music_name)
+    except Exception as ex:
+        remove_file(fname, path)
+        print("error")

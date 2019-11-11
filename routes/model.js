@@ -6,29 +6,24 @@ var fs = require('fs');
 const exec = require('await-exec');
 
 /* GET home page. */
-router.get('/:fname', async (req, res, next) => {
-     var audio_path = './wave/'+req.params.fname;
-     var cmd = 'python3 ./deepmusic/for_express_deep_music.py ' + audio_path;
-     var result; 
+// router.get('/:fname', async (req, res, next) => {
+//      var audio_path = './wave/'+req.params.fname;
+//      var cmd = 'python3 ./deepmusic/for_express_deep_music.py ' + audio_path;
+//      var result; 
 
-     const { stdout, stderr } = await exec(cmd);
-     var info = {
-        music_name : stdout,
-     }
-     res.json(info)
-});
+//      const { stdout, stderr } = await exec(cmd);
+//      var info = {
+//         music_name : stdout,
+//      }
+//      res.json(info)
+// });
 
 router.post('/musicname', async (req, res, next) => {
      fs.writeFile('wave/data.wav', req.body, function(err) {});
      var audio_path = './wave/data.wav';
      var cmd = 'python3 ./deepmusic/for_express_deep_music.py ' + audio_path;
-     var result; 
 
      const { stdout, stderr } = await exec(cmd);
-     //var info = {
-       // music_name : stdout,
-     //}
-     //res.json(info)
 
      res.send(stdout);
      res.end();
