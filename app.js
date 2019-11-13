@@ -25,7 +25,7 @@ app.set('view engine', 'pug');
 
 
 
-app.use(bodyParser.raw({ type: 'audio/wav', limit: '50mb' }));
+app.use(bodyParser.raw({ type: 'audio/wav', limit: '5mb' }));
 
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
