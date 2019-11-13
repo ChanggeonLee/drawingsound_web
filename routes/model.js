@@ -24,7 +24,7 @@ router.post('/musicname', async (req, res, next) => {
      var cmd = 'python3 ./deepmusic/for_express_deep_music.py ' + audio_path;
 
      const { stdout, stderr } = await exec(cmd);
-
+     console.log(stdout);
      res.send(stdout);
      res.end();
 });
