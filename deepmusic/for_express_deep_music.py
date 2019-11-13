@@ -60,11 +60,11 @@ def save_wav(data_path, path_png, num=1):
         ax.axis('off')
 
         # load type         
-        y, sr = librosa.load(data_path,offset=offset, duration=10)   
-        X = librosa.stft(y)
-        Xdb = librosa.amplitude_to_db(abs(X))
-        librosa.display.specshow(Xdb, sr=sr, y_axis='hz', x_axis="off",ax=ax)
-
+        y, sr = librosa.load(data_path,offset=offset, duration=10)
+        S_full, phase = librosa.magphase(librosa.stft(y))
+        librosa.display.specshow(librosa.amplitude_to_db(S_full, ref=np.max),
+                         y_axis='hz', x_axis='off', sr=11025, ax=ax)
+                         
         fig.savefig ( path_png +"_"+str(num)+ str(offset) )
         plt.close(fig)
         gc.collect()
