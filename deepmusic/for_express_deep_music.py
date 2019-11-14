@@ -51,7 +51,7 @@ def get_length(path):
 # In[3]:
 
 
-def save_wav(data_path, path_png, num=1):
+def save_wav(data_path, path_png, num=5):
     length = get_length(data_path)
     
     for offset in range(0,int(length),num):
@@ -116,8 +116,10 @@ def get_music_name(y):
         predict.append(label[np.argmax(y_index)])
     
 #     print(predict)
-    result = Counter(predict).most_common(1)
-    return result[0][0]
+    #result = Counter(predict).most_common(1)
+    #return result[0][0]
+    result = predict[0]+"/"+predict[1]+"/"+predict[2]
+    return result
 
 
 # In[11]:
