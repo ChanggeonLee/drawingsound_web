@@ -111,18 +111,15 @@ def load_data(data_path):
 
 def get_music_name(y):
     predict = []
-    label = ['GIVE_LOVE_AKMU', 'Palette_IU', '소녀_오혁', '여수_밤바다_버스커버스커', '스물셋_IU', '밤편지_IU', '방에_모기가_있어_10cm', '상어가족_핑크퐁', '삐삐_IU', '200%_AKMU']
+    label = get_label() 
     for y_index in y:
         predict.append(label[np.argmax(y_index)])
-    
-#     print(predict)
-    #result = Counter(predict).most_common(1)
-    #return result[0][0]
+
     result = predict[0]+"/"+predict[1]+"/"+predict[2]
     return result
 
-
-# In[11]:
+def get_label(label="./deepmusic/model/label.npy"):
+    return np.load(label)
 
 
 def remove_file(fname, path):
