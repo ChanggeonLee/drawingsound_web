@@ -61,9 +61,12 @@ def save_wav(data_path, path_png, num=5):
 
         # load type         
         y, sr = librosa.load(data_path,offset=offset, duration=10)
-        S_full, phase = librosa.magphase(librosa.stft(y))
-        librosa.display.specshow(librosa.amplitude_to_db(S_full, ref=np.max),
-                         y_axis='hz', x_axis='off', sr=11025, ax=ax)
+        #S_full, phase = librosa.magphase(librosa.stft(y))
+        #librosa.display.specshow(librosa.amplitude_to_db(S_full, ref=np.max),
+         #                y_axis='hz', x_axis='off', sr=11025, ax=ax)
+        S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128, fmax=8000)
+        S_dB = librosa.power_to_db(S, ref=np.max)
+        librosa.display.specshow(S_dB, y_axis='off', x_axis='off', sr=11025, ax=ax)
                          
         fig.savefig ( path_png +"_"+str(num)+ str(offset) )
         plt.close(fig)
@@ -81,7 +84,7 @@ def load_model(path="./model/"):
     loaded_model = model_from_json(loaded_model_json)
     loaded_model.load_weights(path+"DeepMusic.h5")
     
-    adam = keras.optimizers.Adam(learning_rate=0.001)
+    adam = keras.optimizers.Adam(learning_rate=0.00001)
     loaded_model.compile(loss=keras.losses.categorical_crossentropy, optimizer=adam, metrics=['accuracy'])
     return loaded_model
 
@@ -92,15 +95,16 @@ def load_model(path="./model/"):
 def load_data(data_path):
     x_data = []
     subdir = os.listdir(data_path)
+
     for idex, subdir in enumerate(subdir):
-        img = cv2.imread(data_path+subdir,0)
+        img = cv2.imread(data_path+subdir,1)
         x_data.append(img/255)
 
     x_data = np.array(x_data)
     height = 216
     width = 504
     
-    x_data = x_data.reshape(x_data.shape[0], height, width, 1)
+    x_data = x_data.reshape(x_data.shape[0], height, width, 3)
     x_data = x_data.astype('float32')/255
     
     return x_data
@@ -112,8 +116,10 @@ def load_data(data_path):
 def get_music_name(y):
     predict = []
     label = get_label() 
+    add = 0
     for y_index in y:
-        predict.append(label[np.argmax(y_index)])
+        index = np.argmax(y_index)
+        predict.append(label[index])
 
     result = predict[0]+"/"+predict[1]+"/"+predict[2]
     return result
@@ -122,12 +128,8 @@ def get_label(label="./deepmusic/model/label.npy"):
     return np.load(label)
 
 
-def remove_file(fname, path):
-#     shutil.rmtree(fname)
+def remove_file(path):
     shutil.rmtree(path)
-
-
-# In[13]:
 
 
 if __name__ == "__main__":
@@ -135,8 +137,13 @@ if __name__ == "__main__":
         # args로 경로 입력
         fname=sys.argv[1]
         path=fname+"_png/"
-        os.mkdir(path)
-        
+
+        try : 
+            os.mkdir(path)
+        except Exception as ex:
+            remove_file(path)
+            os.mkdir(path)
+            
         # 입력 받은 경로에 관한 이미지를 만들어서 저장
         save_wav(fname, path)
         
@@ -151,10 +158,10 @@ if __name__ == "__main__":
         music_name = get_music_name(y)
         
         # 폴더와 wav파일 지운다.
-        remove_file(fname, path)
+        remove_file(path)
         
         # 예측값을 return
         print(music_name)
     except Exception as ex:
-        remove_file(fname, path)
+        remove_file(path)
         print("error")
